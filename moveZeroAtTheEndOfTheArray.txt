@@ -1,0 +1,41 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        moveZeroAtTheEndOfTheArray();
+
+    }
+
+    public static void moveZeroAtTheEndOfTheArray() {
+        int[] arr = {1, 0, 3, 4, 0, 1, 2, 5, 0, 1, 2};
+        int zeroCounter = 0;
+
+        System.out.println("\t The given array:");
+        printArrea(arr);
+
+        int[] secondArr = new int[arr.length];
+        System.out.println("\n\t Print second (empty) arrea:");
+        printArrea(secondArr);
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 0) {
+                zeroCounter++;
+            }
+            if (arr[i] != 0) {
+                secondArr[i - zeroCounter] = arr[i];
+            }
+        }
+
+        System.out.println("\n\t Final print second arrea:");
+        printArrea(secondArr);
+
+    }
+
+    public static void printArrea(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + "| ");
+        }
+    }
+}
